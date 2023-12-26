@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+<section class="color_me">
+    <div class="poster" style="background-image: url({{url_for('static', filename='images/coffee_background.jpg')}});">
+        <h1 class="poster_heading">Discover the Ultimate Workspace <br>at Goa's Exclusive Cafes</h1>
+    </div>
+    <div class="container">
+        <h2 id="not_found" style="display:none; color:red; text-align:center;">Sorry No Cafes were Found..</h2> <!--for javascript-->
+        {% if all_cafes %}
+            <div class="row">
+                {% for cafe in all_cafes %}
+                <div class="col-xs-12 col-sm-6 col-md-4 all_cafes">
+                    <div class="card" style="width: 18rem;">
+                      <img src={{cafe.image}} class="card-img-top" alt={{cafe.name}}>
+                      <div class="card-body">
+                        <h5 class="card-title">{{cafe.name}}</h5>
+                        <p class="card-text">{{cafe.location}}</p>
+                        <a href="{{url_for('cafe_details', cafe_id=cafe.id)}}" class="btn btn-danger">Explore Cafe</a>
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h1 class="poster_heading" style="position: relative; top: 45px; color: #ca5d69;">Sorry no cafes found to work</h1>
+        {% endif %}
+    </div>
+
+
+</section>
+{% include 'footer.html' %}

@@ -1,0 +1,65 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include 'header.html' %}
+<section class="color_me">
+    <div class="cafes_detail" style="background-image: url({{cafe.image}});background-size: 100% 100%;height:400px;">
+        {% if current_user.id == 1 %}
+            <a href={{url_for('edit_cafe', cafe_id=cafe.id)}} class="btn btn-primary gap"><img src={{url_for('static', filename='images/pencil.svg')}} alt="edit button">Cafe</a>
+        {% endif %}
+        <h1 class="title">{{cafe.name}}</h1>
+        {% if current_user.id == 1 %}
+            <a href={{url_for('delete_cafe', cafe_id=cafe.id)}} class="btn btn-danger gap"><img src={{url_for('static', filename='images/trash.svg')}} alt="delete button">Cafe</a>
+        {% endif %}
+    </div>
+    <div class="details" style="background-image: url({{url_for('static', filename='images/black_background.jpg')}}); background-size: 100% 100%;">
+        <div class="container boxup">
+           <div class="left">
+                <p class="option"><span class="menu">{{cafe.__table__.columns["timing"].key}}</span> : {{cafe.timing}}</p>
+                <p class="option"><span class="menu">approx {{cafe.__table__.columns["price"].key}}</span> : ₨ {{cafe.price}}</p>
+                <p class="option"><span class="menu">{{cafe.__table__.columns["map"].key}}</span> : <a href={{cafe.map}} style="color: white;" target="_blank">{{cafe.location}}</a></p>
+            </div>
+           <div class="right">
+                <p class="option"><span class="menu">{{cafe.__table__.columns["wifi"].key}}</span> : {{cafe.wifi}}</p>
+                <p class="option"><span class="menu">{{cafe.__table__.columns["socket"].key}}</span> : {{cafe.socket}}</p>
+                <p class="option"><span class="menu">{{cafe.__table__.columns["toilet"].key}}</span> : {{cafe.toilet}}</p>
+           </div>
+        </div>
+    </div>
+    <div class="container" style="padding: 50px;">
+        <div class="comment">
+            <ul class="commentList" style="list-style-type: none;">
+                {% for comment in cafe.id_comment %}
+                    <li>
+                        <div class="upper">
+                            <span class="fa-stack fa-lg">
+                              <i class="fas fa-circle fa-stack-2x text-black"></i>
+                              <i class="fab fa-inverse fa-stack-1x text-white">{{comment.admin_id.username[0].capitalize()}}</i>
+                            </span>
+                           <span style="font-family:Lato">{{comment.admin_id.username}}</span>
+                        </div>
+                        <div class="lower" style="padding-left: 60px;">
+                            <p>{{comment.ratings}}</p>
+                            <p style="font-family:Lora">{{comment.comment|safe}}</p>
+                        </div>
+                    </li>
+                <hr>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <form id="myForm" action={{url_for('cafe_details', cafe_id=cafe.id)}} method="post">
+            {{form.csrf_token}}
+            <div class="row">
+                <div class="col-sm-12 col-md-6 mb-2 mx-auto">
+                    {{form.comment.label(class='mb-2', style="font-family:'Proza Libre';")}}<br>
+                    {{form.comment(class='form-control', style="border: 2px solid #333;")}}
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                    {{form.ratings.label(class='mb-2', style="font-family:'Proza Libre';")}}<br>
+                    {{form.ratings(class='form-select', style="border: 2px solid #333;")}}
+                </div>
+            </div>
+            {{form.submit(class="btn btn-primary")}}
+        </form>
+    </div>
+</section>
+{% include 'footer.html' %}

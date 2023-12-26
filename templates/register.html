@@ -1,0 +1,9 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include 'header.html' %}
+<div class="cover">
+    <div class="container register_block">
+        <h2 style="text-align:center;">Register</h2>
+        {{render_form(form, button_map={"submit": "primary"})}}
+    </div>
+</div>
+{% include 'footer.html' %}

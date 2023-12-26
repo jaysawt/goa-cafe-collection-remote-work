@@ -1,0 +1,138 @@
+/*
+RED
+#ca5d69
+#cf1721
+
+BROWN
+#4a2f2b
+#d5d5d5
+please note we have to use javascript for search content and making form include in collapse for small screens
+*/
+
+/*NAVBAR STYLING*/
+#navbarSupportedContent{
+    justify-content: center;
+}
+
+.nav-link{
+    color: white;
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    color: grey; /* Set to the background color you want */
+  }
+/*.d-flex{
+    justify-content: flex-end;
+}*/
+/*NAVBAR STYLING*/
+
+
+/*HOME PAGE POSTER STYLING*/
+.color_me{
+    min-height: calc(100vh - 170px);
+}
+
+.poster{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    height: 300px;
+}
+
+.poster_heading{
+    text-align: center;
+}
+
+.all_cafes{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    text-align:center;
+    height: 300px;
+}
+
+.card-img-top{
+    height: 165px;
+}
+
+/*HOME PAGE POSTER STYLING*/
+
+/*REGISTER PAGE STYLING*/
+.cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 170px);
+    background: linear-gradient(to right, #874610, #ecb45d);
+}
+.register_block{
+    width: 350px;
+    padding: 25px;
+}
+/*REGISTER PAGE STYLING*/
+
+/*CAFE DETAIL STYLING*/
+.cafes_detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    font-family: Bebas Neue;
+    font-size: 50px;
+    position: relative;
+    bottom: 50px;
+}
+
+.gap{
+    margin: 20px;
+}
+
+.option{
+    font-family: Lora;
+}
+.menu{
+    font-family: Lato;
+}
+/* Proza Libre Roboto Open Sans Lora Lato*/
+.boxup{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.left,.right{
+    flex: 1;
+    padding: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+
+@media (max-width: 767px){
+    .boxup{
+        flex-direction: column;
+    }
+    .left{
+        font-size: 20px;
+        padding-bottom: 0px
+    }
+    .right{
+        font-size: 20px;
+        padding-top: 0px
+    }
+}
+
+/*CAFE DETAIL STYLING*/
+
+
+/*FOOTER STYLING*/
+footer{
+    background: linear-gradient(to right, #874610, #ecb45d);
+    padding: 10px;
+}
+/*FOOTER STYLING*/
+
+Bebas Neue Proza Libre Roboto Open Sans Lora Lato
