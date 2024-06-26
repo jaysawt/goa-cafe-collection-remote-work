@@ -1,10 +1,10 @@
-# Goa Cafe Collection For Remote Work
+# Goa Cafe Collection For Remote Work 🏖️☕
 
-## Overview
+## Overview 🌟
 
 Welcome to the Goa Cafe Collection site! This platform is designed to help remote workers find cafes in Goa where they can work comfortably. Users can explore cafe amenities, read reviews, and leave their own feedback. If you're the site creator, you can manage cafes by adding, modifying, or deleting entries.
 
-## Features
+## Features ✨
 
 - Responsive design with Bootstrap for a seamless experience on different devices.
 - Explore Cafes: Browse through a list of cafes in Goa.
@@ -14,7 +14,7 @@ Welcome to the Goa Cafe Collection site! This platform is designed to help remot
 - User Authentication: Secure login and password protection.
 - Database Management: Utilizes Flask Alchemy for relational databases.
 
-## Requirements
+## Requirements 🛠️
 
 - Python 3.x
 - Flask
@@ -23,18 +23,22 @@ Welcome to the Goa Cafe Collection site! This platform is designed to help remot
 - wtforms
 - SQLAlchemy
 
+## Working of Website 🌐
 
-## Working of Website:
-
-### Home Page:
+### Home Page 🏠
 ![Home Page](readmeimages/homepage.png)
-### Register Page:
+
+### Register Page 📝
 ![Register Page](readmeimages/register.png)
-### Login Page:
+
+### Login Page 🔑
 ![Login Page](readmeimages/login.png)
-### Add a Cafe Page:
+
+### Add a Cafe Page 🏢
 ![Add a Cafe](readmeimages/addcafe.png)
-### Cafe Page:
+
+### Cafe Page ☕
 ![Cafe Page](readmeimages/cafedetail.png)
-### Comments:
-![comment](readmeimages/comments.png)
+
+### Comments 💬
+![Comments](readmeimages/comments.png)
